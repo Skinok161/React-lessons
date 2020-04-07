@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <div style={{
-            // в html я бы сделал через display flex, но тут я так нельзя и я в тупике)
+            // в html я бы сделал через display flex, но тут так нельзя и я в тупике)
            }}>
       {names.map((item) => (
         <Name name={item}/>
