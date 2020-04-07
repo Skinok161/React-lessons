@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Name from './Name';
+import Surname from './Surname';
+import { findByLabelText } from '@testing-library/react';
 
 function App() {
+  const names = ['Pasha', 'Sasha', 'Egor'];
+  const surnames = ['Ivanov', 'Petrov', 'Sidorov'];
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={{
+            // в html я бы сделал через display flex, но тут я так нельзя и я в тупике)
+           }}>
+      {names.map((item) => (
+        <Name name={item}/>
+      ))}
+        {surnames.map((value) => (
+          <Surname surname={value}/>
+        ))}
+      </div>
     </div>
   );
 }
